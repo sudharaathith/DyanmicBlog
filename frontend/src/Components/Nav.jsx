@@ -69,7 +69,7 @@ function Nav(props) {
     return (
       <>
         <Navbar className="sticky inset-0 z-10 h-max max-w-full rounded-none py-2 px-4 lg:px-8 lg:py-4">
-          <div className="flex items-center justify-between text-blue-gray-900">
+          <div className="flex flex-row items-center justify-between text-blue-gray-900 ">
             <Typography
               as="a"
               href="#"
@@ -77,8 +77,9 @@ function Nav(props) {
             >
               Dynamic Blog
             </Typography>
+            </div><div className='w-96'>
+            < Search className='' />
             </div>
-            < Search />
         </Navbar>
         </>
     );
