@@ -1,12 +1,14 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Main from "./Pages/Main";
+import Edit from "./Pages/Edit";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" index element={<Main />}>
-        </Route>
+        <Route path="/" index element={<Main />} />
+        <Route path="/edit" element={<Edit/>} /> 
+
       </Routes>
     </BrowserRouter>
   );
