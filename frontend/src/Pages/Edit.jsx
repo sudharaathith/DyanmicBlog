@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Head from '../Components/Head';
 import Nav from '../Components/Nav';
+import axios from 'axios';
 
 function Edit(props) {
     
@@ -12,6 +13,12 @@ function Edit(props) {
             Urlmode:false,
         }
     });
+
+    useEffect(()=>{
+        axios.put('http://127.0.0.1:8000/blogs/',{data:Json}).then((response)=>{
+            console.log(response.data);
+        })
+    }, [Json])
 
 
 
