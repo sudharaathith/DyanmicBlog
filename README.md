@@ -1,1 +1,1 @@
-# DyanmicBlog
+# Dyanmic Blog
