@@ -3,7 +3,7 @@ import React from 'react';
 
 function PostCard(props) {
     return (
-        <div className=' bg-white my-3 p-5 rounded-md shadow-md'>
+        <div className=' bg-white my-3 p-5 rounded-md shadow-xl'>
             <Typography
             variant="h2"
             >
