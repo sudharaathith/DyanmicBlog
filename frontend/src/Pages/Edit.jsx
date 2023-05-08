@@ -8,7 +8,7 @@ function Edit(props) {
     return (
             
         <div className=' h-screen flex flex-row' >
-            <div className='h-full w-full bg-white bg-opacity-80'>
+            <div className='h-full w-full'>
                 
                 <Head id={-1} className='' setSelect={setSelect} head={head} setHead={setHead} edit={select===-1}/>
             <div className='z-[1] fixed  w-screen h-screen' onClick={()=>{setSelect(-2)}}></div>

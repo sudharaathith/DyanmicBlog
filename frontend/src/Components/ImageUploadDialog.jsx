@@ -15,8 +15,8 @@ function ImageUploadDialog(props) {
   
   return (
     <div>
-      <Button className="p-3 pr-1 rounded-none rounded-l-xl">img</Button>
-      <div className=" absolute m-10 p-3 rounded-xl shadow-xl">
+      <Button className="p-3 pr-1 rounded-none rounded-l-xl z-5">img</Button>
+      <div className=" absolute m-10 p-3 rounded-xl shadow-xl bg-white bg-opacity-90 ">
         <Tabs>
           <TabsHeader>
             <Tab key={"Url"} value="Url">
@@ -36,7 +36,7 @@ function ImageUploadDialog(props) {
                 type="file"
                 onChange={(event) => {
                   console.log(event.target.files[0]);
-                  setSelectedImage(event.target.files[0]);
+                  props.setSelectedImage(event.target.files[0]);
                 }}
                 className=" file color-red"
               />
