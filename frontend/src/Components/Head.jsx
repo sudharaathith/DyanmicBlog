@@ -14,7 +14,11 @@ function Head(props) {
       }
 
     useEffect(()=>{
-        
+        let temp = props.data
+        temp.Head.title = head;
+        temp.Head.Urlmode = urlmode;
+        temp.Head.Url = selectedImage;
+        props.setData(temp);
         
     },[selectedImage,urlmode,head])
     return (
