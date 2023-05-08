@@ -6,7 +6,7 @@ from rest_framework import routers, serializers, viewsets
 class BlogsSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Blogs
-        fields = ['created', 'updated', 'data']
+        fields = ['id','created', 'updated', 'data']
 
 # ViewSets define the view behavior.
 class BlogsViewSet(viewsets.ModelViewSet):
