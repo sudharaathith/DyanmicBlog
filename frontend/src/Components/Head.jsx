@@ -19,6 +19,7 @@ function Head(props) {
         temp.Head.Urlmode = urlmode;
         temp.Head.Url = selectedImage;
         props.setData(temp);
+        if(props.data.Head.title !== "Heading"){props.save()};
         
     },[selectedImage,urlmode,head])
     return (

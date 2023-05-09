@@ -7,7 +7,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" index element={<Main />} />
-        <Route path="/edit" element={<Edit/>} /> 
+        <Route path="/edit/:id" element={<Edit/>} /> 
 
       </Routes>
     </BrowserRouter>
