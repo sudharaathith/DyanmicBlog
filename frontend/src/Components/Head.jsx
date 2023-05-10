@@ -16,7 +16,6 @@ function Head(props) {
     useEffect(()=>{
         let temp = props.data
         temp.Head.title = head;
-        temp.Head.Urlmode = urlmode;
         temp.Head.Url = selectedImage;
         props.setData(temp);
         if(props.data.Head.title !== "Heading"){props.save()};
@@ -30,7 +29,7 @@ function Head(props) {
             className=' absolute w-full h-full z-[-1]'
             alt="not found"
             width={"250px"}
-            src={urlmode?selectedImage:URL.createObjectURL(selectedImage)}
+            src={selectedImage}
           />)}
             
             <Typography variant="h1" className="z-20 black" >

@@ -9,6 +9,17 @@ import {
 } from "@material-tailwind/react";
 import React, { useState } from "react";
 
+function getBase64(file, cb) {
+  let reader = new FileReader();
+  reader.readAsDataURL(file);
+  reader.onload = function () {
+      cb(reader.result)
+  };
+  reader.onerror = function (error) {
+      console.log('Error: ', error);
+  };
+}
+
 function ImageUploadDialog(props) {
     const[url, setUrl] = useState(null);
     const[show, setShow] = useState(false);
@@ -31,7 +42,6 @@ function ImageUploadDialog(props) {
               <Input label="URL" className=" w-60" onChange={(e)=>{setUrl(e.target.value)}}/>
               <Button className="mt-3" onClick={()=>{
                 props.setSelectedImage(url);
-                props.setUrlmode(true);
               }}>Save</Button>
             </TabPanel>
             <TabPanel key="Upload" value="Upload" className="flex flex-col">
@@ -39,8 +49,7 @@ function ImageUploadDialog(props) {
                 type="file"
                 onChange={(event) => {
                   console.log(event.target.files[0]);
-                  props.setSelectedImage(event.target.files[0]);
-                  props.setUrlmode(false);
+                  getBase64(event.target.files[0],(res)=>{props.setSelectedImage(res);})
                 }}
                 className=" file color-red"
               />
