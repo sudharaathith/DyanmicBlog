@@ -3,6 +3,7 @@ import Head from '../Components/Head';
 import Nav from '../Components/Nav';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import TextFied from '../Components/TextFied';
 
 
 function Edit(props) {
@@ -33,8 +34,8 @@ function Edit(props) {
             {Json &&<div className='h-full w-full'>
                 
                 <Head id={-1} data={Json} setData ={setJson} save={save} className='' setSelect={setSelect} edit={select===-1}/>
+                <TextFied id={0} data={Json} setData ={setJson} save={save} className='' setSelect={setSelect} edit={select===0}/>
             <div className='z-[1] fixed  w-screen h-screen' onClick={()=>{setSelect(-2)}}></div>
-                <hr></hr>
             </div>}
         </div>
     );
