@@ -19,6 +19,8 @@ function Edit(props) {
     let [select, setSelect] = useState(-2);
     let [Json, setJson] = useState(null);
     
+    
+    
     useEffect(()=>{
         axios.get(`http://127.0.0.1:8000/blogs/${arg.id}/`).then((response)=>{
             setJson(response.data.data);
@@ -31,12 +33,15 @@ function Edit(props) {
             console.log(response.data);
         })
     }
-    let [body, setBody] = useState([<TextFied key={0} id={0} data={Json} setData ={setJson} save={save} className='' setSelect={setSelect} select={select}/>]);
+    let [body, setBody] = useState([]);
 
     const addText = ()=>{
         const len = body.length;
-        setBody(body.push( <TextFied id={len+1} data={Json} setData ={setJson} save={save} className='' setSelect={setSelect} edit={select===(len+1)}/>))
+        setBody([...body, <TextFied key={len} id={len} data={Json} setData ={setJson} save={save} className='' setSelect={setSelect} select={select} />])
     }
+
+
+    
 
 
 
@@ -53,7 +58,7 @@ function Edit(props) {
             <div className='z-[1] fixed  w-screen h-screen' onClick={()=>{setSelect(-2)}}></div>
             </div>}
             </div>
-            <div className=' fixed bottom-3  w-screen flex flex-col'>
+            <div className=' fixed bottom-3  w-screen flex flex-col z-30'>
                 <div className='bg-white shadow-2xl  rounded-xl p-3 bg-opacity-70 mx-auto'>
                 <Button className=' p-3 m-0 ' onClick={addText}><BsBodyText /></Button>
                 </div>

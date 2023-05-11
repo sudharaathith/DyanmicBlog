@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Typography } from "@material-tailwind/react";
 import ReactQuill, { Quill } from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
@@ -7,7 +7,12 @@ import 'react-quill/dist/quill.snow.css';
 
 function TextFied(props) {
   const [value, setValue] = useState('Text');
-  const edit = props.select === props.id;
+  const [edit, setEdit] = useState(false);
+
+  useEffect(()=>{
+    setEdit(props.select === props.id);
+    console.log(props.select === props.id)
+  })
   var toolbarOptions = [
     ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
     ['blockquote', 'code-block'],
@@ -33,6 +38,7 @@ function TextFied(props) {
       className=" flex justify-center items-center z-20 overflow-hidden w-full bg-white"
       onClick={() => {
         props.setSelect(props.id);
+        console.log("clicked")
       }}
     >
 { edit&&(<ReactQuill className="w-full z-0 " modules={{
