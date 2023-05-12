@@ -40,7 +40,9 @@ function Edit(props) {
         setBody([...body, <TextFied key={len} id={len} data={Json} setData ={setJson} save={save} className='' setSelect={setSelect} select={select} />])
     }
 
+   let rerender = ()=>{ for(let i;i<body.length;i++){
 
+    }}
     
 
 
