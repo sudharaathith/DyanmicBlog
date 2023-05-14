@@ -33,7 +33,7 @@ function Edit(props) {
             console.log(response.data);
         })
     }
-    let [body, setBody] = useState([]); //summa
+    let [body, setBody] = useState([]);
 
     const addText = ()=>{
         const len = body.length;
