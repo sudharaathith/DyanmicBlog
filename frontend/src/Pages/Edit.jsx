@@ -32,7 +32,7 @@ function Edit(props) {
         axios.put(`http://127.0.0.1:8000/blogs/${arg.id}/`,{data:Json}).then((response)=>{
             console.log(response.data);
         })
-    }
+    }//summa
     let [body, setBody] = useState([]);
 
     const addText = ()=>{
